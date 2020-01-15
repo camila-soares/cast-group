@@ -70,9 +70,12 @@ public class PessoaController {
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/{nome}")
-	public List<Pessoa> countP(@PathVariable("nome")String nome){
-		return service.countP(nome);
+	
+	@GetMapping("/{codigo}")
+	public ResponseEntity<Pessoa> find(@PathVariable Long codigo) {
+		Pessoa p = service.find(codigo);
+		return ResponseEntity.ok().body(p);
 	}
+	
 	
 }

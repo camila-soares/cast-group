@@ -41,6 +41,7 @@ public class PessoaService {
 		newObj.setNacionalidade(obj.getNacionalidade());
 		newObj.setNaturalidade(obj.getNaturalidade());
 		newObj.setSexo(obj.getSexo());
+		newObj.setCpf(obj.getCpf());
 
 	}
 
