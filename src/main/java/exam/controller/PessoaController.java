@@ -8,22 +8,25 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+
 import exam.Pessoa;
 import exam.repository.PessoaRepository;
 import exam.service.PessoaService;
-import javassist.tools.rmi.ObjectNotFoundException;
+import exam.service.exception.ObjectNotFoundException;
 
+@CrossOrigin(origins= "http://localhoost:4200")
 @RestController
 @RequestMapping("/pessoa")
 public class PessoaController {
@@ -51,9 +54,25 @@ public class PessoaController {
 
 	}
 	
+
+	@DeleteMapping("/{codigo}")
+	public ResponseEntity<Void> delete(@PathVariable Long codigo) throws Exception {
+		service.delete(codigo);
+		return ResponseEntity.noContent().build();
+		
+	}
+	
+	@PutMapping("/{codigo}")
+	public ResponseEntity<Void> update(@Valid @RequestBody Pessoa obj, @PathVariable Long codigo) throws ObjectNotFoundException{
+		
+		obj.setCodigo(codigo);
+		obj = service.update(obj);
+		return ResponseEntity.noContent().build();
+	}
+	
 	@GetMapping("/{nome}")
-	public List<Pessoa> pesquisar(@PathVariable("nome") String nome) {
-		return repository.findByNome(nome);
+	public List<Pessoa> countP(@PathVariable("nome")String nome){
+		return service.countP(nome);
 	}
 	
 }

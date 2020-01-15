@@ -1,6 +1,9 @@
 package exam;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,13 +11,32 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.br.CPF;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Pessoa implements Serializable{
+	public Pessoa(Long codigo, String nome, String sexo, String email, int i, String naturalidade,
+			String nascionalidade2, String cpf2) {
+		// TODO Auto-generated constructor stub
+	}
+
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -23,94 +45,21 @@ public class Pessoa implements Serializable{
 
 	@NotEmpty(message="Este campo é obrigatório")
 	private String nome;
-
-
-	@NotEmpty(message="Este campo � obrigat�rio")
-	private String salario;
-
 	
+	private String sexo;
+	@NotNull
+	@Email(message="email inválido")
+	private String email;
 	
-	@JsonIgnore
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="unidade_codigo", referencedColumnName="codigo", nullable=false)
-	private Unidade unidade;
+	@NotNull
+	private Date dtnasc;
 
+	private String naturalidade;
+	
+	private String nacionalidade;
+	
+	@CPF(message = "cpf inválido")
+	private String cpf;
+	
 
-	public Pessoa() {}
-
-
-
-	public Pessoa(Long codigo, String nome, String salario) {
-		super();
-		this.codigo = codigo;
-		this.nome = nome;
-		this.salario = salario;
 	}
-
-
-
-	public Long getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getSalario() {
-		return salario;
-	}
-
-	public void setSalario(String salario) {
-		this.salario = salario;
-	}
-
-	public Unidade getUnidade() {
-		return unidade;
-	}
-
-	public void setUnidade(Unidade unidade) {
-		this.unidade = unidade;
-	}
-
-
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
-		return result;
-	}
-
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Pessoa other = (Pessoa) obj;
-		if (codigo == null) {
-			if (other.codigo != null)
-				return false;
-		} else if (!codigo.equals(other.codigo))
-			return false;
-		return true;
-	}
-
-
-
-
-}

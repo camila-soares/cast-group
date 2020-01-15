@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
 
 import exam.Pessoa;
 import exam.repository.PessoaRepository;
@@ -34,8 +36,12 @@ public class PessoaService {
 	
 	private void updateData(Pessoa newObj, Pessoa obj) {
 		newObj.setNome(obj.getNome());
+		newObj.setDtnasc(obj.getDtnasc());
+		newObj.setEmail(obj.getEmail());
+		newObj.setNacionalidade(obj.getNacionalidade());
+		newObj.setNaturalidade(obj.getNaturalidade());
+		newObj.setSexo(obj.getSexo());
 
-		
 	}
 
 	public List<Pessoa> listAll() {
@@ -46,5 +52,19 @@ public class PessoaService {
 		return pessoaRepository.findByNome(nome);
 		
 	}
-
+	
+	public List<Pessoa> countP(String nome){
+		return pessoaRepository.countp(nome);
+	}
+	
+	public void delete(Long codigo) throws Exception {
+		find(codigo);
+		try{
+			pessoaRepository.deleteById (codigo);
+		}
+		catch (DataIntegrityViolationException e) {
+			throw new Exception("Não é possivel excluir");
+		}
+		
+	}
 }

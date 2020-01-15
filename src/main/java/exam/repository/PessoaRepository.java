@@ -8,13 +8,16 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import exam.Pessoa;
-import exam.Unidade;
 
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	
 	
-	//@Query("SELECT count(p) FROM p where p")
+	///@Query("SELECT sum(p.salario) FROM Pessoa p")
+	//List<Pessoa> sump (@Param("nome") String nome);
+	
+	@Query("SELECT count(*) FROM Pessoa p")
+	List<Pessoa> countp (@Param("nome") String nome);
 	/**
 	 * Salva ou atualiza o objeto de pessoa no banco de dados. 
 	 * Se o objeto tiver o c�digo informado, ent�o atualiza o 
