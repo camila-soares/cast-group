@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: exam-cast
+Implementation-Title: spring-docker-spotify
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Administrador
-Implementation-Vendor-Id: br.com.castgroup.recife
+Implementation-Vendor-Id: br.com.exam
 Build-Jdk: 1.8.0_191
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/exam
+ ot-starter-parent/spring-docker-spotify
 Created-By: Maven Integration for Eclipse
 

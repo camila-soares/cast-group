@@ -3,13 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>br.com.castgroup.recife</groupId>
-	<artifactId>exam</artifactId>
+	<groupId>br.com.exam</groupId>
+	<artifactId>spring-docker-spotify</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
-	<name>exam-cast</name>
-	<description>Desafio para selação da cast group</description>
+	<name>spring-docker-spotify</name>
+	<description>Desafio para selação</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -56,10 +55,10 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		
-		<!-- dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency-->
+		</dependency>
 
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -78,6 +77,28 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.spotify</groupId>
+				<artifactId>dockerfile-maven-plugin</artifactId>
+				<version>1.4.13</version>
+				<executions>
+					<execution>
+						<id>default</id>
+						<goals>
+						  <goal>build</goal>
+						  <goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+					<repository>150787/spring-docker-spotify</repository>
+					<tag>${project.version}</tag>
+					<buildArgs>
+					  <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+					</buildArgs>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

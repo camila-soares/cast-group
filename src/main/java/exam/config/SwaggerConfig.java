@@ -53,11 +53,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "API para crud de Pessoas e Unidades",
+                "API para crud de Pessoas ",
                 "Esta API tem as funcionalidades de cadastrar pessoas, listar todas pessoas, buscar por nome,"
-                + " cadastrar Unidades, busca total de todas pessoas da unidade, contar quantas pessoas tem em cada unidade",
+                + "",
                 "Versão 1.0",
-                "githrb.com/camila-soares",
+                "github.com/camila-soares",
                 new Contact("Camila Soares", "github.com/camila-soares", "camilasoares1507@gmail.com"),
                 "",
                 "",
