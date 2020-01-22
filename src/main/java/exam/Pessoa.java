@@ -5,7 +5,6 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -16,7 +15,6 @@ import org.hibernate.validator.constraints.br.CPF;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
@@ -25,14 +23,8 @@ import lombok.ToString;
 @Setter
 @ToString
 @AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Pessoa implements Serializable{
-	public Pessoa(Long codigo, String nome, String sexo, String email, Date date, String naturalidade,
-			String nascionalidade2, String cpf2) {
-		// TODO Auto-generated constructor stub
-	}
-
 	
 	private static final long serialVersionUID = 1L;
 

@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: ${JDBC_DATASOURCE_URL}
-  jpa:
-    generate-ddl: true
-    show-sql: true
