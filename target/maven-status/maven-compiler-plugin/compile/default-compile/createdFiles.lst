@@ -1,9 +1,0 @@
-exam\Pessoa.class
-exam\config\CorsConfig.class
-exam\ExamApplication.class
-exam\service\PessoaService.class
-exam\service\exception\ObjectNotFoundException.class
-exam\config\SwaggerConfig.class
-exam\utils\URL.class
-exam\controller\PessoaController.class
-exam\repository\PessoaRepository.class

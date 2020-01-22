@@ -25,14 +25,14 @@ private PessoaRepository pessoaRepository;
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Pessoa p1  = new Pessoa(null, "Usuário 1", "feminino", "teste@teste.com", new Date(10-10-2000), "Recife", "brasileira"
-				,  "08146639402");
-		
-
-		Pessoa p2= new Pessoa(null, "Usuário 2", "masculino", "user@user.com", new Date(22-01-2000), "Belo Horizonte", "brasileira"
-				, "03335322444");
-		
-		pessoaRepository.saveAll(Arrays.asList(p1,p2));
+//		Pessoa p1  = new Pessoa(null, "Usuário 1", "feminino", "teste@teste.com", new Date(10-10-2000), "Recife", "brasileira"
+//						,  "08146639402");
+//		
+//
+//		Pessoa p2= new Pessoa(null, "Usuário 2", "masculino", "user@user.com", new Date(22-01-2000), "Belo Horizonte", "brasileira"
+//				, "03335322444");
+//		
+//		pessoaRepository.saveAll(Arrays.asList(p1,p2));
 		
 		
 	}

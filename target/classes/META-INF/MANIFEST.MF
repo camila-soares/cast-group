@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
 Implementation-Title: spring-docker-spotify
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: Administrador
+Built-By: macbook
 Implementation-Vendor-Id: br.com.exam
-Build-Jdk: 1.8.0_191
+Build-Jdk: 1.8.0_231
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
  ot-starter-parent/spring-docker-spotify
 Created-By: Maven Integration for Eclipse
