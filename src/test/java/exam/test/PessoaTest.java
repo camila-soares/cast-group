@@ -25,7 +25,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.http.client.support.BasicAuthorizationInterceptor;
-import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -47,7 +46,7 @@ public class PessoaTest {
     private TestRestTemplate template = new TestRestTemplate();
 	
     
-    @WithMockUser(value = "spring", password = "secret")
+    
     @Test
     public void givenAuthRequestOnPrivateService_shouldSucceedWith200() throws Exception {
     	mockmvc.perform(get("http://localhost:8080//api/v1//basicauth/").contentType(MediaType.APPLICATION_JSON))
