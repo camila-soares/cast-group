@@ -28,9 +28,9 @@ public class Pessoa implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Pessoa(Long codigo, @NotNull(message = "Este campo é obrigatório") String nome, String sexo,
-			@NotNull @Email(message = "email inválido") String email, @NotNull Date dtnasc, String naturalidade,
-			String nacionalidade, @NotNull @CPF(message = "cpf inválido") String cpf) {
+	public Pessoa(Long codigo, String nome, String sexo,
+			String email, Date dtnasc, String naturalidade,
+			String nacionalidade, String cpf) {
 		super();
 		this.codigo = codigo;
 		this.nome = nome;
