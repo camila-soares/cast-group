@@ -28,19 +28,11 @@ public class Pessoa implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Pessoa(Long codigo, String nome, String sexo,
-			String email, Date dtnasc, String naturalidade,
-			String nacionalidade, String cpf) {
+	public Pessoa() {
 		super();
-		this.codigo = codigo;
-		this.nome = nome;
-		this.sexo = sexo;
-		this.email = email;
-		this.dtnasc = dtnasc;
-		this.naturalidade = naturalidade;
-		this.nacionalidade = nacionalidade;
-		this.cpf = cpf;
+		// TODO Auto-generated constructor stub
 	}
+
 
 	@Id
 	@GeneratedValue(generator = "increment")
