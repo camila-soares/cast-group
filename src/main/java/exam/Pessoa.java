@@ -27,6 +27,20 @@ import lombok.ToString;
 public class Pessoa implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
+	
+	public Pessoa(Long codigo, @NotNull(message = "Este campo é obrigatório") String nome, String sexo,
+			@NotNull @Email(message = "email inválido") String email, @NotNull Date dtnasc, String naturalidade,
+			String nacionalidade, @NotNull @CPF(message = "cpf inválido") String cpf) {
+		super();
+		this.codigo = codigo;
+		this.nome = nome;
+		this.sexo = sexo;
+		this.email = email;
+		this.dtnasc = dtnasc;
+		this.naturalidade = naturalidade;
+		this.nacionalidade = nacionalidade;
+		this.cpf = cpf;
+	}
 
 	@Id
 	@GeneratedValue(generator = "increment")
