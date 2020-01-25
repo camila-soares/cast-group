@@ -24,6 +24,6 @@ spring:
     oauth2:
       client:
         registration:
-          clientSecret: WPtHcaG5zVTn5zvBuBJXvNwL
+          client-secret: WPtHcaG5zVTn5zvBuBJXvNwL
           google:
             client-id: 394224039572-89vddsfh6ctu0ipgdkjjlc5cvnarhsum.apps.googleusercontent.com
