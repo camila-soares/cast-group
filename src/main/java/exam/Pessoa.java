@@ -30,7 +30,20 @@ public class Pessoa implements Serializable{
 	
 	public Pessoa() {
 		super();
-		// TODO Auto-generated constructor stub
+	}
+
+
+	public Pessoa(long codigo, String nome, String sexo,
+			String email, Date dtnasc, String naturalidade, String nacionalidade,
+			String cpf) {
+		this.codigo = codigo;
+		this.nome = nome;
+		this.email = email;
+		this.dtnasc = dtnasc;
+		this.naturalidade= nacionalidade;
+		this.nacionalidade = nacionalidade;
+		this.cpf = cpf;
+				
 	}
 
 
@@ -112,16 +125,18 @@ public class Pessoa implements Serializable{
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public  Long setCodigo(Long codigo) {
 		this.codigo = codigo;
+		return codigo;
 	}
 	
 	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public String setNome(String nome) {
+		 this.nome = nome;
+		 return nome;
 	}
 
 

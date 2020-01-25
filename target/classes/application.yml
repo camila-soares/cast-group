@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: ''
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 394224039572-89vddsfh6ctu0ipgdkjjlc5cvnarhsum.apps.googleusercontent.com
+            client-secret: 7aRCcC7awsyswNsASo_VTA8f
+            
+security:
+    oauth2:
+        client:
+            clientId: 394224039572-89vddsfh6ctu0ipgdkjjlc5cvnarhsum.apps.googleusercontent.com
+            clientSecret: 7aRCcC7awsyswNsASo_VTA8f
+            accessTokenUri: https://oauth2.googleapis.com/token
+            userAuthorizationUri: https://accounts.google.com/o/oauth2/auth
+            tokenName: oauth_token
+            authenticationScheme: query
+            clientAuthenticationScheme: form
+            scope: profile
+        resource:
+            userInfoUri: https://www.googleapis.com/userinfo/v2/me
+            preferTokenInfo: false
+            

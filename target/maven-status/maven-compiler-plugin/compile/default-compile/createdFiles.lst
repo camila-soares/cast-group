@@ -1,0 +1,12 @@
+exam/Pessoa.class
+exam/ExamApplication.class
+exam/controller/BasicAuthController.class
+exam/service/PessoaService.class
+exam/config/SecurityConfig.class
+exam/config/AuthenticationBean.class
+exam/service/exception/ObjectNotFoundException.class
+exam/config/CorsConfig.class
+exam/controller/PessoaController.class
+exam/repository/PessoaRepository.class
+exam/config/SwaggerConfig.class
+exam/utils/URL.class

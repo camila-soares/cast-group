@@ -27,7 +27,7 @@ import exam.service.PessoaService;
 import exam.service.exception.ObjectNotFoundException;
 
 @CrossOrigin(origins= "http://localhoost:4200")
-@Controller
+@RestController
 @RequestMapping("/pessoa")
 public class PessoaController {
 
