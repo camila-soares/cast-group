@@ -12,11 +12,10 @@ security:
       userInfoUri: https://www.googleapis.com/userinfo/v2/me
 spring:
   datasource:
-    url: "postgres://wplrkghdbnosrf:c931b9be2836f8ab82738fb8edad0b06e91f459fe0966d8565c8fbc6f41cb300@ec2-52-2-43-242.compute-1.amazonaws.com:5432/db2ac87c07pcem\t\
-      \t"
+    url: "postgres://wplrkghdbnosrf:c931b9be2836f8ab82738fb8edad0b06e91f459fe0966d8565c8fbc6f41cb300@ec2-52-2-43-242.compute-1.amazonaws.com:5432/db2ac87c07pcem"
   jpa:
     hibernate:
-      ddl-auto: "none\t\t"
+      ddl-auto: none
     properties:
       hibernate:
         format_sql: false
@@ -25,6 +24,6 @@ spring:
     oauth2:
       client:
         registration:
-          clientSecret: 
+          clientSecret: WPtHcaG5zVTn5zvBuBJXvNwL
           google:
             client-id: 394224039572-89vddsfh6ctu0ipgdkjjlc5cvnarhsum.apps.googleusercontent.com
