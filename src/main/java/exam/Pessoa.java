@@ -49,8 +49,7 @@ public class Pessoa implements Serializable{
 
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@GenericGenerator(name = "increment", strategy = "increment")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long codigo;
 
 	@NotNull(message="Este campo é obrigatório")
