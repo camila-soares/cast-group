@@ -1,0 +1,29 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "exam.config.OAuth2ClientProperties",
+      "name": "spring.security.oauth2.client.registration.google.client-secret",
+      "type": "exam.config.OAuth2ClientProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "security.oauth2",
+      "description": "A description for 'security.oauth2'",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "exam.config.OAuth2ClientProperties",
+      "name": "spring.security.oauth2.client.registration.google.client-secret.provider",
+      "description": "OAuth provider details.",
+      "type": "java.util.Map<java.lang.String,exam.config.OAuth2ClientProperties.Provider>"
+    },
+    {
+      "sourceType": "exam.config.OAuth2ClientProperties",
+      "name": "spring.security.oauth2.client.registration.google.client-secret.registration",
+      "description": "OAuth client registrations.",
+      "type": "java.util.Map<java.lang.String,exam.config.OAuth2ClientProperties.Registration>"
+    }
+  ]
+}
