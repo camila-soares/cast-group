@@ -19,11 +19,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Data
-@Getter
-@Setter
-@ToString
-@AllArgsConstructor
+
 @Entity
 public class Pessoa implements Serializable{
 	
@@ -49,7 +45,7 @@ public class Pessoa implements Serializable{
 
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)	
+	@GeneratedValue(strategy=GenerationType.AUTO)	
 	private Long codigo;
 
 	@NotNull(message="Este campo é obrigatório")
@@ -137,6 +133,82 @@ public class Pessoa implements Serializable{
 	public String setNome(String nome) {
 		 this.nome = nome;
 		 return nome;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Pessoa [codigo=" + codigo + ", nome=" + nome + ", sexo=" + sexo + ", email=" + email + ", dtnasc="
+				+ dtnasc + ", naturalidade=" + naturalidade + ", nacionalidade=" + nacionalidade + ", cpf=" + cpf + "]";
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
+		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
+		result = prime * result + ((dtnasc == null) ? 0 : dtnasc.hashCode());
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((nacionalidade == null) ? 0 : nacionalidade.hashCode());
+		result = prime * result + ((naturalidade == null) ? 0 : naturalidade.hashCode());
+		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
+		result = prime * result + ((sexo == null) ? 0 : sexo.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pessoa other = (Pessoa) obj;
+		if (codigo == null) {
+			if (other.codigo != null)
+				return false;
+		} else if (!codigo.equals(other.codigo))
+			return false;
+		if (cpf == null) {
+			if (other.cpf != null)
+				return false;
+		} else if (!cpf.equals(other.cpf))
+			return false;
+		if (dtnasc == null) {
+			if (other.dtnasc != null)
+				return false;
+		} else if (!dtnasc.equals(other.dtnasc))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (nacionalidade == null) {
+			if (other.nacionalidade != null)
+				return false;
+		} else if (!nacionalidade.equals(other.nacionalidade))
+			return false;
+		if (naturalidade == null) {
+			if (other.naturalidade != null)
+				return false;
+		} else if (!naturalidade.equals(other.naturalidade))
+			return false;
+		if (nome == null) {
+			if (other.nome != null)
+				return false;
+		} else if (!nome.equals(other.nome))
+			return false;
+		if (sexo == null) {
+			if (other.sexo != null)
+				return false;
+		} else if (!sexo.equals(other.sexo))
+			return false;
+		return true;
 	}
 
 
