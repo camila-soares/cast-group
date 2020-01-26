@@ -12,10 +12,5 @@ import exam.Pessoa;
 @Repository
 public interface PessoaRepository extends JpaRepository<Pessoa, Long> {
 	
-	@Query("SELECT count(*) FROM Pessoa p")
-	List<Pessoa> countp (@Param("nome") String nome);
-	
-	@Query("select p from Pessoa p where lower(p.nome) like lower(concat('%', ?1, '%'))")
-	List<Pessoa> findByNome(@Param("nome")String nome);
 
 }

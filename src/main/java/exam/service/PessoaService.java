@@ -51,15 +51,6 @@ public class PessoaService {
 		return pessoaRepository.findAll();
 	}
 	
-	public List<Pessoa> findByNome(String nome) {
-		return pessoaRepository.findByNome(nome);
-		
-	}
-	
-	public List<Pessoa> countP(String nome){
-		return pessoaRepository.countp(nome);
-	}
-	
 	public void delete(Long codigo) throws Exception {
 		find(codigo);
 		try{
